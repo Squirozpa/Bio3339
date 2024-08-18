@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='Bio3339_tools',
     version='0.0.0',
-    packages=find_packages(),
+    packages=find_packages(include=['Bio3339_tools', 'Bio3339_tools.*']),
     install_requires=[],
     python_requires='>=3.12',
     description='A collection of tools for Bio3339',
