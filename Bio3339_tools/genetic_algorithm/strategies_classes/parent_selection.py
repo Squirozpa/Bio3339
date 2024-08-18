@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import cast
 from typing import TYPE_CHECKING, Sequence
 # Local Library Imports
-from genetic_algorithm.abstract_classes.abstract_strategies import ParentSelectionStrategy
+from Bio3339_tools.genetic_algorithm.abstract_classes.abstract_strategies import ParentSelectionStrategy
 if TYPE_CHECKING:
     from genetic_algorithm.population_classes.individual import Individual
     from genetic_algorithm.population_classes.population import Population
