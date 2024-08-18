@@ -3,10 +3,12 @@ Survivor Selection Strategies
 """
 
 # Standard Library Imports
-from typing import List
+from __future__ import annotations
+from typing import List, TYPE_CHECKING
 # Local Library Imports
 from genetic_algorithm.abstract_classes.abstract_strategies import SurvivorSelectionStrategy
-from genetic_algorithm.population_classes import Individual
+if TYPE_CHECKING:
+    from genetic_algorithm.population_classes.individual import Individual
 ####################################################################################################
 
 

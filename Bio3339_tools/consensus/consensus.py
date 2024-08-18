@@ -4,7 +4,6 @@ from typing import Any, Callable, Iterable, Sequence
 import numpy as np
 from numba import njit, prange
 from numpy.typing import NDArray
-# from genetic_algorithm.config.log_config import CustomLogger
 
 logger = logging.getLogger(__name__)
 #### IMPORTANT ####

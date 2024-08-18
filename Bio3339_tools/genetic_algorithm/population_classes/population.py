@@ -8,18 +8,19 @@ information on how to use it.
 """
 
 # Standard Library Imports
-
+from __future__ import annotations
 from logging import getLogger
 from random import Random
-from typing import Optional, cast
+from typing import TYPE_CHECKING, Optional, cast
+
 # Local Library Imports
-from logger import CustomLogger
-from genetic_algorithm.abstract_classes.abstract_strategies import (
-    CrossoverStrategy, ParentSelectionStrategy, SurvivorSelectionStrategy,
-    FitnessStrategy)
-from genetic_algorithm.population_classes import Individual
-from genetic_algorithm.abstract_classes.abstract_population import (
-    AbstractPopulation, StrategyConfig, PopulationState, PopulationParams)
+from Bio3339_tools.logger import CustomLogger
+if TYPE_CHECKING:
+    from Bio3339_tools.genetic_algorithm.abstract_classes.population_config import (
+        PopulationParams, StrategyConfig, PopulationState)
+from Bio3339_tools.genetic_algorithm.abstract_classes.abstract_population import (
+    AbstractPopulation, Individual, CrossoverStrategy, FitnessStrategy, ParentSelectionStrategy,
+    SurvivorSelectionStrategy)
 ####################################################################################################
 
 

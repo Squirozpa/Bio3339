@@ -1,10 +1,11 @@
+from __future__ import annotations
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from random import Random
-from typing import Any, Iterable, Sequence
-
-from genetic_algorithm.abstract_classes import AbstractPopulation
-from genetic_algorithm.population_classes import Individual
+from typing import TYPE_CHECKING, Any, Iterable, Sequence
+if TYPE_CHECKING:
+    from genetic_algorithm.population_classes.individual import Individual
+    from genetic_algorithm.abstract_classes.abstract_population import AbstractPopulation
 
 # Gene Pool must be instanced before all other strategies
 

@@ -8,22 +8,23 @@ information on how to use it.
 """
 
 # Standard Library Imports
-from dataclasses import dataclass, field
-from typing import Type, cast
+from __future__ import annotations
+from typing import TYPE_CHECKING, cast
 from abc import ABC, abstractmethod
 from typing import Optional
 import random
 import logging
 import copy
 import time
-
 # Local Imports
-from genetic_algorithm.abstract_classes import (
-    GenePool, StrategyConfig, FitnessStrategy, CrossoverStrategy, SurvivorSelectionStrategy, ParentSelectionStrategy,
-    PopulationParams, PopulationState, StrategyConfig)
-from genetic_algorithm.population_classes import Individual
-from logger import CustomLogger
-####################################################################################################
+from Bio3339_tools.genetic_algorithm.abstract_classes.abstract_strategies import (
+    FitnessStrategy, CrossoverStrategy, SurvivorSelectionStrategy, ParentSelectionStrategy,
+    GenePool)
+from Bio3339_tools.genetic_algorithm.abstract_classes.population_config import (
+    PopulationParams, StrategyConfig, PopulationState)
+from Bio3339_tools.genetic_algorithm.population_classes.individual import Individual
+from Bio3339_tools.logger import CustomLogger
+################################ ####################################################################
 
 
 class AbstractPopulation(ABC):

@@ -3,13 +3,15 @@ Selection Strategies are used to select parents from the population to be used i
 """
 
 # Standard Library Imports
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import cast
 from typing import TYPE_CHECKING, Sequence
 # Local Library Imports
 from genetic_algorithm.abstract_classes.abstract_strategies import ParentSelectionStrategy
 if TYPE_CHECKING:
-    from genetic_algorithm.population_classes import Individual, Population
+    from genetic_algorithm.population_classes.individual import Individual
+    from genetic_algorithm.population_classes.population import Population
 
 ####################################################################################################
 
@@ -17,8 +19,11 @@ if TYPE_CHECKING:
 @dataclass
 class RouletteWheelSelection(ParentSelectionStrategy):
     def select_parents(self, *args, **kwargs) -> Sequence["Individual"]:
-        self.population = cast("Population", self.population)
+        self.population = cast(Population, self.population)
         parents = []
+
+        if self.population is None:
+            raise ValueError("Population not initialized")
 
         if self.population.state is None:
             raise ValueError(
@@ -46,8 +51,11 @@ class TournamentSelection(ParentSelectionStrategy):
     tournament_size: int = 6
 
     def select_parents(self, *args, **kwargs) -> Sequence["Individual"]:
-        self.population = cast("Population", self.population)
+        self.population = cast(Population, self.population)
         parents = []
+
+        if self.population is None:
+            raise ValueError("Population not initialized")
 
         if self.population.state is None:
             raise ValueError(

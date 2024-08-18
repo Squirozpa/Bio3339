@@ -4,12 +4,13 @@ mutate and convert genes for the individuals in the population.
 """
 
 # Standard Library Imports
+from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 # Local Library Imports
-from genetic_algorithm.abstract_classes import GenePool
+from genetic_algorithm.abstract_classes.abstract_strategies import GenePool
 if TYPE_CHECKING:
-    from genetic_algorithm.population_classes import Individual
+    from genetic_algorithm.population_classes.individual import Individual
 ####################################################################################################
 
 

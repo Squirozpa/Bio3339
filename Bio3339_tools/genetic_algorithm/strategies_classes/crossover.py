@@ -4,14 +4,14 @@ genes of two parents to create new children.
 """
 
 # Standard Library Imports
-from ctypes import cast
 from dataclasses import dataclass
 
-from random import Random
-from typing import Iterable, Sequence
+from typing import TYPE_CHECKING, Iterable, Sequence
 # Local Library Imports
 from genetic_algorithm.abstract_classes.abstract_strategies import CrossoverStrategy
-from genetic_algorithm.population_classes import Individual
+if TYPE_CHECKING:
+    from genetic_algorithm.population_classes.individual import Individual
+
 
 ####################################################################################################
 
