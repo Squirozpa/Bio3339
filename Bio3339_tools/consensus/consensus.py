@@ -253,7 +253,7 @@ def get_relative_matrix(alignment_array: NDArray[np.int32]) -> NDArray[np.float6
 
 
 @ njit(parallel=True)
-def consensus(rel_matrix: NDArray[np.float64], threshold):
+def get_consensus_sequence(rel_matrix: NDArray[np.float64], threshold):
     sequence_length = rel_matrix.shape[0]
     consensus_sequence = np.empty(sequence_length, dtype=np.int32)
     for j in prange(sequence_length):  # pylint: disable=not-an-iterable
@@ -275,5 +275,5 @@ def convert_to_iupac_chars(consensus_sequence):
 @alignment_to_numpy_decorator
 def alignment_to_consensus(alignment_array, threshold):
     rel_matrix = get_relative_matrix(alignment_array)
-    consensus_sequence = consensus(rel_matrix, threshold)
+    consensus_sequence = get_consensus_sequence(rel_matrix, threshold)
     return convert_to_iupac_chars(consensus_sequence)

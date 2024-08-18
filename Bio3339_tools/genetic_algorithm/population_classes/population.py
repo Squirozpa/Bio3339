@@ -1,8 +1,8 @@
 """
 Class for population of individuals. This class is designed to hold a list of individuals, which its
-genes are binary vectors. Also contains all the logic to generate a new population from the current 
+genes are vectors. Also contains all the logic to generate a new population from the current 
 one, such as selection, crossover, and mutation. The class is designed to be used in a genetic
-algorithm, but can be used in any optimization algorithm that requires a binary representation of 
+algorithm, but can be used in any optimization algorithm that requires a representation of 
 the solution. It contains all the logic to run the genetic algorithm, refer to the README for more 
 information on how to use it.
 """
