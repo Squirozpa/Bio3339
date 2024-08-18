@@ -56,8 +56,8 @@ class FitnessStrategy(ABC):
 
 @dataclass
 class CrossoverStrategy(ABC):
+    random: Random
     population: AbstractPopulation | None = None
-    random: Random | None = Random()
     args: tuple = field(default_factory=tuple)
     kwargs: dict = field(default_factory=dict)
 
@@ -71,8 +71,8 @@ class CrossoverStrategy(ABC):
 
 @dataclass
 class SurvivorSelectionStrategy(ABC):
+    random: Random
     population: AbstractPopulation | None = None
-    random: Random | None = Random()
     args: tuple = field(default_factory=tuple)
     kwargs: dict = field(default_factory=dict)
 
@@ -83,8 +83,8 @@ class SurvivorSelectionStrategy(ABC):
 
 @dataclass
 class ParentSelectionStrategy(ABC):
+    random: Random
     population: AbstractPopulation | None = None
-    random: Random = Random()
     args: tuple = field(default_factory=tuple)
     kwargs: dict = field(default_factory=dict)
 
