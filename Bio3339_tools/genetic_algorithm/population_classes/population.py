@@ -124,8 +124,5 @@ class Population(AbstractPopulation):
 
     def _generate_random_individual(self):
         """Generates a random individual."""
-        if self.state is None:
-            raise ValueError(
-                "Population not initialized or initialized incorrectly.")
         gene_vector = self.strategies.gene_pool.generate_genes()
         return Individual(genes=gene_vector, population_id=self.id, iteration=self.state.iteration)

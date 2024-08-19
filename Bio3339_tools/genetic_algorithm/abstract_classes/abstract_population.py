@@ -54,7 +54,10 @@ class AbstractPopulation(ABC):
 
         if state is not None and not isinstance(state, PopulationState):
             raise TypeError("State must be an instance of PopulationState")
-        self.state = state if state is not None else None
+        if state is None:
+            self._generate_initial_population()
+        else:
+            self.state = state
 
         self._id = id(self)
         self.name = name if name is not None else f"Population {self.id}"
