@@ -43,6 +43,9 @@ class AbstractPopulation(ABC):
         self.logger.debug(
             "Initializing Abstract Population with name %s", name)
 
+        self._id = id(self)
+        self.name = name if name is not None else f"Population {self.id}"
+
         if not isinstance(strategies, StrategyConfig):
             raise TypeError(
                 "Strategies must be an instance of StrategyConfig")
@@ -58,9 +61,6 @@ class AbstractPopulation(ABC):
             self._generate_initial_population()
         else:
             self.state = state
-
-        self._id = id(self)
-        self.name = name if name is not None else f"Population {self.id}"
 
     # endregion
 
