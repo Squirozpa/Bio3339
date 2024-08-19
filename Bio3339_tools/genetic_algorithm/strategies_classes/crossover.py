@@ -10,8 +10,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Iterable, Sequence
 # Local Library Imports
 from Bio3339_tools.genetic_algorithm.abstract_classes.abstract_strategies import CrossoverStrategy
-if TYPE_CHECKING:
-    from genetic_algorithm.population_classes.individual import Individual
+
+from Bio3339_tools.genetic_algorithm.population_classes.individual import Individual
 
 
 ####################################################################################################
