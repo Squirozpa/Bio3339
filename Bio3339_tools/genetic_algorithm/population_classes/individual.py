@@ -26,7 +26,9 @@ class Individual:
             raise ValueError(
                 f"Fitness must be a float or int, not {type(value)}")
         if self._fitness is not None:
-            raise ValueError("Fitness has already been calculated")
+            if self._fitness != value:
+                self.loggger.warning(
+                    f"Fitness value {value} is calculating a new value: {self._fitness} for {self}")
         if value < 0:
             raise ValueError("Fitness cannot be negative")
         self._fitness = value

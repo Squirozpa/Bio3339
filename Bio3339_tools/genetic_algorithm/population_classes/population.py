@@ -64,7 +64,7 @@ class Population(AbstractPopulation):
             FitnessStrategy, self.strategies.fitness)
         for individual in self:
             individual.fitness = self.strategies.fitness.fitness(
-                individual.genes) if individual.fitness is None else individual.fitness
+                individual.genes)
 
     def _evolve_population(self):
         """Evolves the population to the next generation."""
