@@ -19,7 +19,6 @@ if TYPE_CHECKING:
 @dataclass
 class RouletteWheelSelection(ParentSelectionStrategy):
     def select_parents(self, *args, **kwargs) -> Sequence["Individual"]:
-        self.population = cast(Population, self.population)
         parents = []
 
         if self.population is None:
