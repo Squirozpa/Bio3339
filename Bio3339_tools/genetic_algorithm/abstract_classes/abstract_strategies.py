@@ -16,10 +16,7 @@ class GenePool(ABC):
     consistent with the FitnessStrategy as its the core functionality of this algorithm"""
     genes: list = field(repr=False)
     vector_size: int = field()
-    seed: int | str | float
-
-    def __post_init__(self):
-        self.random = Random(self.seed)
+    random: Random = field(repr=False)
 
     def __len__(self):
         return self.vector_size
