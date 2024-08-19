@@ -47,7 +47,7 @@ class PopulationState:
     _iteration: int = field(default=0, init=False)
 
     def __iter__(self):
-        return iter(self._best_individuals)
+        return iter(self.individuals)
 
     @property
     def iteration(self):
