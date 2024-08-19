@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Bio3339_tools',
-    version='0.0.3',
+    version='0.0.5',
     packages=find_packages(include=['Bio3339_tools', 'Bio3339_tools.*']),
     install_requires=[],
     python_requires='>=3.12',

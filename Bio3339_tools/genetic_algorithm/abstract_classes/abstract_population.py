@@ -63,6 +63,12 @@ class AbstractPopulation(ABC):
         else:
             self.state = state
 
+        if self.strategies.survivor_selection.population is None:
+            self.strategies.survivor_selection.population = self
+        if self.strategies.parent_selection.population is None:
+            self.strategies.parent_selection.population = self
+        if self.strategies.crossover.population is None:
+            self.strategies.crossover.population = self
     # endregion
 
     # region Properties
