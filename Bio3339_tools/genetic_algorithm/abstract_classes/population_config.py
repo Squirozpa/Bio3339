@@ -33,10 +33,8 @@ class PopulationParams():
     population_size: int = 100
     immigration_rate: Optional[float] = None
     num_survivors: int = 2
-    seed: Optional[int | str | float] = None
-
-    def __post_init__(self):
-        self.random = Random(self.seed)
+    seed: None | int | str | float = None
+    random: Random = field(default_factory=Random)
 
 
 @dataclass
