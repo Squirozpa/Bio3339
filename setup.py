@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'numba',
         'numpy'],
-    python_requires='>=3.12',
+    python_requires='>=3.10',
     description='A collection of tools for Bio3339',
     author='Sebastián Quiroz',
     author_email='squirozpa@uc.cl',
