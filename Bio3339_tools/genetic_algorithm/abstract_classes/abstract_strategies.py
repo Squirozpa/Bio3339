@@ -45,9 +45,16 @@ class FitnessStrategy(ABC):
     shared_dict: dict[tuple, float] | None = None
 
     def fitness(self, gene_vector) -> float:
-        fitness_value = self._fitness(gene_vector)
+        gene_tuple = tuple(gene_vector)
         if self.shared_dict is not None:
-            self.shared_dict[tuple(gene_vector)] = fitness_value
+            if gene_tuple in self.shared_dict:
+                return self.shared_dict[gene_tuple]
+
+        fitness_value = self._fitness(gene_vector)
+
+        if self.shared_dict is not None:
+            self.shared_dict[gene_tuple] = fitness_value
+
         return fitness_value
 
     @abstractmethod
